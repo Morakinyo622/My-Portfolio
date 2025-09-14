@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BeckieTee Global — Our Story & Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & global styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #333333;
+      background-color: #fafafa;
+    }
+    a {
+      color: #0B6B4F;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header / Navigation */
+    header {
+      background: #ffffff;
+      padding: 15px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0B6B4F;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav li {
+      font-weight: 600;
+    }
+
+    /* Sections */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    section {
+      margin-bottom: 80px;
+    }
+    section h2 {
+      font-size: 2.4rem;
+      color: #0B6B4F;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #FFD54A;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Hero / Intro */
+    .hero {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .hero img {
+      max-width: 220px;
+      border-radius: 50%;
+      border: 5px solid #0B6B4F;
+    }
+    .hero h1 {
+      margin-top: 20px;
+      font-size: 3rem;
+      color: #0B6B4F;
+    }
+    .hero p {
+      margin-top: 12px;
+      font-size: 1.3rem;
+      color: #555555;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Product / Project Highlight */
+    .project {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+    .project img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    .project-details {
+      flex: 1;
+      min-width: 300px;
+    }
+    .project-details h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #0B6B4F;
+    }
+    .project-details p {
+      font-size: 1.1rem;
+      color: #555555;
+      margin-bottom: 12px;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #0B6B4F;
+      color: #ffffff;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+    .btn-primary:hover {
+      background-color: #094f3a;
+    }
+
+    /* Video section */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+    }
+    .video-container iframe, .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .testimonial {
+      margin-bottom: 24px;
+    }
+    .testimonial:last-child {
+      margin-bottom: 0;
+    }
+    .testimonial p {
+      font-size: 1.1rem;
+      color: #555555;
+      margin-bottom: 8px;
+    }
+    .testimonial .author {
+      font-weight: 600;
+      color: #0B6B4F;
+    }
+
+    /* About & Contact */
+    .about p, .contact p {
+      font-size: 1.1rem;
+      color: #555555;
+      margin-bottom: 12px;
+    }
+    .about ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .contact ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .contact li {
+      margin-bottom: 8px;
+    }
+
+    /* Responsive tweaks */
+    @media(max-width: 768px) {
+      .nav-container { flex-direction: column; gap: 15px; }
+      .project { flex-direction: column; }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #ffffff;
+      color: #777777;
+      border-top: 1px solid #dddddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="nav-brand">BeckieTee Global</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#product">Product</a></li>
+          <li><a href="#video">Demo Video</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero / Intro -->
+    <section class="hero" id="about">
+      <img src="/mnt/data/E68EBA45-56A0-4759-A141-DDCCA875D0E0.jpeg" alt="BeckieTee Spiced Powdered Pap Pack">
+      <h1>BeckieTee Global</h1>
+      <p>Authentic Nigerian spiced powdered pap crafted with care — natural ingredients, nostalgic taste.</p>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="OGI 1.jpg"Pap in bowl texture close-up">
+        <img src="OGI 2.jpg"Fresh homemade pap texture">
+        <img src="OGI 3.jpg" alt="Preparing pap ingredients">
+        <img src="OGI 4.jpg" alt="Pap being served">
+      </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="product">
+      <h2>Our Product</h2>
+      <div class="project">
+        <img src="OGI.jpeg" alt="BeckieTee Spiced Powdered Pap 500g pack">
+        <div class="project-details">
+          <h3>BeckieTee Spiced Powdered Pap (500g)</h3>
+          <p>Our spiced powdered pap is made from yellow corn, ginger, bay leaves, and cloves. No preservatives, no additives. Hand-packed to preserve natural flavor and health benefits.</p>
+          <p>Ready in minutes. Perfect with milk, sugar, honey or paired with akara or fruits. Brings comfort to your breakfast or snacks.</p>
+          <a class="btn-primary" href="#contact">Order Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Demo -->
+    <section id="video">
+      <h2>Demo Video</h2>
+      <div class="video-container">
+        <!-- Example: Youtube embed; replace with your video -->
+        <iframe src="https://www.youtube.com/embed/HKMVT8c97ds" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <h2>What Customers Say</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"I love this pap! The spices make it taste even better than homemade. My kids ask for it every morning."</p>
+          <div class="author">— Olutayo. A, Lagos</div>
+        </div>
+        <div class="testimonial">
+          <p>"Been using BeckieTee for 3 months. No additives. I trust it with my family’s health."</p>
+          <div class="author">— Morakinyo A., Abuja</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about-details">
+      <h2>About Us</h2>
+      <div class="about">
+        <p>BeckieTee Global is a Lagos-based brand with a passion for preserving Nigerian food culture. Our journey began with a simple belief: food made with natural ingredients, care, and flavor matters. We craft our Spiced Powdered Pap with yellow corn and aromatics like ginger, bay leaf, and cloves — delivering warmth, nostalgia, and health in every spoonful.</p>
+        <p>Our values are anchored on:</p>
+        <ul>
+          <li>Quality ingredients — no preservatives or artificial additives</li>
+          <li>Taste that honours tradition</li>
+          <li>Health & well-being</li>
+          <li>Community & sustainability</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact & Order</h2>
+      <div class="contact">
+        <p>We’d love to hear from you! Whether you want to order, ask questions, or work with us.</p>
+        <ul>
+          <li>Email: <a href="mailto:info@beckietee.com">info@beckietee.com</a></li>
+          <li>Phone / WhatsApp: +234 803 561 5918</li>
+          <li>Address: Oke-Ilewo, Abeokuta, Nigeria</li>
+        </ul>
+        <p>Connect with us on social media:</p>
+        <ul>
+          <li><a href="https://instagram.com/beckietee_global" target="_blank">Instagram</a></li>
+          <li><a href="https://facebook.com/beckietee_global" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> BeckieTee Global. All Rights Reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

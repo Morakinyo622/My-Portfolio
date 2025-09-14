@@ -1,0 +1,225 @@
+<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & global styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #333333;
+      background-color: #fafafa;
+    }
+    a {
+      color: #0B6B4F;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header / Navigation */
+    header {
+      background: #ffffff;
+      padding: 15px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0B6B4F;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav li {
+      font-weight: 600;
+    }
+
+    /* Sections */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    section {
+      margin-bottom: 80px;
+    }
+    section h2 {
+      font-size: 2.4rem;
+      color: #0B6B4F;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #FFD54A;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Hero / Intro */
+    .hero {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .hero img {
+      max-width: 220px;
+      border-radius: 50%;
+      border: 5px solid #0B6B4F;
+    }
+    .hero h1 {
+      margin-top: 20px;
+      font-size: 3rem;
+      color: #0B6B4F;
+    }
+    .hero p {
+      margin-top: 12px;
+      font-size: 1.3rem;
+      color: #555555;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Product / Project Highlight */
+    .project {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+    .project img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    .project-details {
+      flex: 1;
+      min-width: 300px;
+    }
+    .project-details h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #0B6B4F;
+    }
+    .project-details p {
+      font-size: 1.1rem;
+      color: #555555;
+      margin-bottom: 12px;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #0B6B4F;
+      color: #ffffff;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+    .btn-primary:hover {
+      background-color: #094f3a;
+    }
+
+    /* Video section */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+    }
+    .video-container iframe, .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .testimonial {
+      margin-bottom: 24px;
+    }
+    .testimonial:last-child {
+      margin-bottom: 0;
+    }
+    .testimonial p {
+      font-size: 1.1rem;
+      color: #555555;
+      margin-bottom: 8px;
+    }
+    .testimonial .author {
+      font-weight: 600;
+      color: #0B6B4F;
+    }
+
+    /* About & Contact */
+    .about p, .contact p {
+      font-size: 1.1rem;
+      color: #555555;
+      margin-bottom: 12px;
+    }
+    .about ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .contact ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .contact li {
+      margin-bottom: 8px;
+    }
+
+    /* Responsive tweaks */
+    @media(max-width: 768px) {
+      .nav-container { flex-direction: column; gap: 15px; }
+      .project { flex-direction: column; }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #ffffff;
+      color: #777777;
+      border-top: 1px solid #dddddd;
+    }
+  </style>
+</head>
+<body>
